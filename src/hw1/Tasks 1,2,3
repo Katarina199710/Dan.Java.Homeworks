@@ -1,0 +1,28 @@
+1) mercedes = (1 + (3*(2-4))%3 + (11-7)*2)+(3-5)*3;
+   volvo = mercedes*3 - 9%mercedes + 16-(-mercedes);
+   opel = mercedes%volvo;
+   Необхідно обчислити значення mersedes, volvo і opel.
+
+   mercedes = 3
+   volvo = 28
+   opel = 3
+
+2) int x = 3;
+   int y = ++x*2;
+   x+=-y*3 + ++x + --y;
+   y+=(-x++)%3;
+   int z = x + y;
+   Необхідно обчислити значення x, y і z.
+
+   x = -7
+   y = 9
+   z = 2
+
+3) boolean a = (85/5 + (19-25%3))==(-3)*(-2+14/(-2))&&(2%7-1)*3<=2;
+   boolean b = !a||a&&!a;
+   boolean c = false&&!true||!((23%3+14)%3==7);
+   Необхідно обчислити значення a, b і c.
+
+   a = false
+   b = true
+   c = true
