@@ -11,11 +11,11 @@ public class Task1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Insert some word");
-        String word = scanner.next();
+        String word = scanner.nextLine();
 
         while (!word.equals("STOP")){
             System.out.print(word + " ");
-            word = scanner.next();
+            word = scanner.nextLine();
         }
     }
 }
