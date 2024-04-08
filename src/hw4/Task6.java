@@ -10,16 +10,31 @@ public class Task6 {
     консоль.*/
     public static void main(String[] args) {
         Random randomObject = new Random();
-        int randomInteger = randomObject.nextInt(-50, 51);
+//        int randomInteger = randomObject.nextInt(-50, 51);
         int[] array = new int[45];
         for (int i = 0; i < array.length; i++) {
             array[i] = randomObject.nextInt(-50, 51);
         }
-        Arrays.sort(array, 0, 45);
-        int minInt = Arrays.binarySearch(array, 0);
-        System.out.println(minInt);
-        int maxInt = Arrays.binarySearch(array, 45);
-        System.out.println(maxInt);
+//        Arrays.sort(array, 0, 45);
+//        int minInt = Arrays.binarySearch(array, 0);
+//        System.out.println(minInt);
+//        int maxInt = Arrays.binarySearch(array, 45);
+//        System.out.println(maxInt);
+
+        int minimum = array[0];
+        for(int i = 0; i < array.length; i++){
+            if(minimum > array[i]){
+                minimum = array[i];
+            }
+        }
+        System.out.println(minimum);
+        int maximum = array[44];
+        for(int i = 0; i < array.length; i++){
+            if(minimum < array[i]){
+                minimum = array[i];
+            }
+        }
+        System.out.println(maximum);
 
     }
 }
