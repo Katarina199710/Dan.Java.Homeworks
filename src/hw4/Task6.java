@@ -13,7 +13,7 @@ public class Task6 {
         int randomInteger = randomObject.nextInt(-50, 51);
         int[] array = new int[45];
         for (int i = 0; i < array.length; i++) {
-            array[i] = randomObject.nextInt(-20, 21);
+            array[i] = randomObject.nextInt(-50, 51);
         }
         Arrays.sort(array, 0, 45);
         int minInt = Arrays.binarySearch(array, 0);
