@@ -6,7 +6,6 @@ import java.util.Scanner;
 public class Numbers {
     public static void main(String[] args) {
         Random randomObject = new Random();
-        int randomInteger = randomObject.nextInt(0, 99);
         int[] array = new int[50];
         for (int i = 0; i < array.length; i++) {
             array[i] = randomObject.nextInt(0, 99);
