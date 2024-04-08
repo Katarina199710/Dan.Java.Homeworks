@@ -18,7 +18,7 @@ public class Task1 {
         String string1 = scannerForHW3.next();
         String string2 = scannerForHW3.next();
         String string3 = scannerForHW3.next();
-        String string4 = scannerForHW3.next();
+        String string4 = scannerForHW3.next() + " " + scannerForHW3.next() + " " + scannerForHW3.next();
         System.out.println(string1 + " " + string2 + " " + string3 + " " + string4);
         scannerForHW3.close();
     }
