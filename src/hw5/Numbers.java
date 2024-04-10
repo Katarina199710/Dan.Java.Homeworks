@@ -21,18 +21,15 @@ public class Numbers {
         while (i != array[i]) {
             if (number < array[i]){
                 System.out.println("Your number is too small. Please, try again.");
-            }
-            number = scanner.nextInt();
-            if (number > array[i]){
+                number = scanner.nextInt();
+            }else if (number > array[i]){
                 System.out.println("Your number is too big. Please, try again.");
+                number = scanner.nextInt();
+            }else {
+                String result = "Congratulations, {name}!";
+                System.out.println(result.replace("{name}", name));
+                break;
             }
-            number = scanner.nextInt();
-            if (number == array[i]){
-//                String result = "Congratulations, {name}!";
-//                System.out.println(result.replace("{name}", name));
-            }
-            String result = "Congratulations, {name}!";
-            System.out.println(result.replace("{name}", name));
         }
     }
 }
