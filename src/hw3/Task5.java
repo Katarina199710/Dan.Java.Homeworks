@@ -7,18 +7,17 @@ public class Task5 {
     символ - или + или % или / или *. На экран выводится результат действия над двумя введенными числами.
     Если пользователь ввел что-то кроме данных символов, то необходимо вывести 0.*/
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double num1 = scanner.nextDouble();
+        double num2 = scanner.nextDouble();
+        String char1 = scanner.next();
 
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Insert first number");
-            int firstNumber = scanner.nextInt();
-            System.out.println("Insert symbol");
-            String symbol = scanner.nextLine();
-            System.out.println("Insert second number");
-            int secondNumber = scanner.nextInt();
-            int resultOfExpression;
-            System.out.println();
-            int result;
+        double result = char1.equals("-") ? num1 - num2 :
+                char1.equals("+") ? num1 + num2 :
+                        char1.equals("%") ? num1 % num2 :
+                                char1.equals("/") ? num1 / num2 :
+                                        char1.equals("*") ? num1 * num2 : 0;
+        System.out.println(result);
 
     }
 }
-// На этих операторах я сдалась. Я не понимаю что нужно делать
