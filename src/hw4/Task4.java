@@ -26,8 +26,7 @@ public class Task4 {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Insert Index of your name from 0 till 6:");
         String result = "{NAME} будет идти в {PLACE} в {TIME}:00";
-//       String numbers = scanner.nextLine();
-//       int index1 = Integer.parseInt(numbers);
+
         int indexOfName = scanner.nextInt();
         while (indexOfName < 0 || indexOfName > 6) {
             System.out.println("Insert Index of your name from 0 till 6:");
