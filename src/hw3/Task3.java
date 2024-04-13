@@ -12,8 +12,7 @@ public class Task3 {
         int numberOne = scanner.nextInt();
         System.out.println("Enter number two");
         int numberTwo = scanner.nextInt();
-        int result = numberOne - numberTwo;
-        int result2 = numberOne > numberTwo ? result : numberTwo < numberOne ? numberTwo - numberOne : result;
-        System.out.println(result2);
+        int result = numberOne > numberTwo ? numberOne - numberTwo : numberTwo > numberOne ? numberTwo - numberOne : 0;
+        System.out.println(result);
     }
 }
