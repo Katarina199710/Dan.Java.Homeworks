@@ -4,7 +4,7 @@ public class Tree {
     private String type;
     private int height;
     private int countOfSticks;
-
+    private String color;
     @Override
     public String toString() {
         return "Tree{" +
@@ -14,8 +14,6 @@ public class Tree {
                 ", color='" + color + '\'' +
                 '}';
     }
-
-    private String color;
 
     public Tree(String type, int height) {
         this.type = type;

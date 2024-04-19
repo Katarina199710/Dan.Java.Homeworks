@@ -31,7 +31,7 @@ public class Calculator {
         }
     }
 
-//Я знаю, что есть нюансы, но это уже додумалась)
+//Я знаю, что есть нюансы, но это уже как додумалась)
 
     public void start() {
         System.out.println("The calculator is running");
