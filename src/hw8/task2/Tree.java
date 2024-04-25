@@ -37,5 +37,6 @@ public class Tree {
 
     public Tree(String type) {
         this();
+        this.type = type;
     }
 }
