@@ -1,30 +1,76 @@
 package hw9;
 
+import java.util.Objects;
+
 public class Human {
     private String name;
     private String surname;
     private int yearOfBirth;
     private int iq;
-    private Pet pet;
-    private Human mother;
-    private Human father;
     private Family family;
-   /* • привітати свого улюбленця (greetPet)("Привіт, [ім'я тварини]")
-      • описати свого улюбленця (describePet): (вивести на екран всю інформацію про свого вихованця:
-        "У мене є [вид тварини], їй [вік тварини] років, він [дуже хитрий]/[майже не хитрий]".
-        Опис хитрості повинен залежати від рівня хитрості вихованця, якщо понад 50 -[дуже хитрий],
-        якщо менше або дорівнює 50 -[майже не хитрий])*/
 
-    public void greetPet(){
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public int getYearOfBirth() {
+        return yearOfBirth;
+    }
+
+    public void setYearOfBirth(int yearOfBirth) {
+        this.yearOfBirth = yearOfBirth;
+    }
+
+    public int getIq() {
+        return iq;
+    }
+
+    public void setIq(int iq) {
+        if (iq >= 0 && iq <= 100) {
+            this.iq = iq;
+        } else {
+            System.out.println("Enter your IQ level again");
+        }
+        this.iq = iq;
+    }
+
+    public Family getFamily() {
+        return family;
+    }
+
+    public void setFamily(Family family) {
+        this.family = family;
+    }
+
+    public void greetPet(Pet pet) {
         System.out.println("Hello, " + pet.getNickname());
     }
-    public void describePet(){
-    }
-   /* • Клас Human повинен виводити повідомлення наступного виду:
-        Human{name='Michael', surname='Karleone', year=1977, iq=90, mother=Jane Karleone,
-        father=Vito Karleone, pet=dog{nickname=' Rock', age=5, trickLevel=75, habits=[eat, drink, sleep]}}*/
 
-    public Human(){
+    public void describePet(Pet pet) {
+        if (pet.getTrickLevel() <= 50) {
+            String text1 = "almost not tricky";
+            System.out.println("I have a " + pet.getSpecies() + " , it`s " + pet.getAge() + " years old, it is "
+                    + text1 + " .");
+        } else {
+            String text2 = "very tricky";
+            System.out.println("I have a " + pet.getSpecies() + " , it`s " + pet.getAge() + " years old, it is "
+                    + text2 + " .");
+        }
+    }
+
+    public Human() {
 
     }
 
@@ -34,21 +80,33 @@ public class Human {
         this.yearOfBirth = yearOfBirth;
     }
 
-    public Human(String name, String surname, int yearOfBirth, Human mother, Human father) {
+    public Human(String name, String surname, int yearOfBirth, int iq) {
         this.name = name;
         this.surname = surname;
         this.yearOfBirth = yearOfBirth;
-        this.mother = mother;
-        this.father = father;
+        if (iq >= 0 && iq <= 100) {
+            this.iq = iq;
+        }
     }
 
-    public Human(String name, String surname, int yearOfBirth, int iq, Pet pet, Human mother, Human father) {
-        this.name = name;
-        this.surname = surname;
-        this.yearOfBirth = yearOfBirth;
-        this.iq = iq;
-        this.pet = pet;
-        this.mother = mother;
-        this.father = father;
+    @Override
+    public String toString() {
+        return '\'' + name + '\'' +
+                ", surname = '" + surname + '\'' +
+                ", yearOfBirth = " + yearOfBirth +
+                ", iq = " + iq;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Human human = (Human) o;
+        return yearOfBirth == human.yearOfBirth && Objects.equals(name, human.name) && Objects.equals(surname, human.surname);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, surname, yearOfBirth);
     }
 }

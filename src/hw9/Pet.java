@@ -1,6 +1,7 @@
 package hw9;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Pet {
     private String species;
@@ -40,7 +41,7 @@ public class Pet {
     public void setTrickLevel(int trickLevel) {
         if (trickLevel >= 0 && trickLevel <= 100) {
             this.trickLevel = trickLevel;
-        }else {
+        } else {
             System.out.println("Enter your trick level again");
         }
     }
@@ -66,7 +67,9 @@ public class Pet {
         this.species = species;
         this.nickname = nickname;
         this.age = age;
-        this.trickLevel = trickLevel;
+        if (trickLevel >= 0 && trickLevel <= 100) {
+            this.trickLevel = trickLevel;
+        }
         this.habits = habits;
     }
 
@@ -84,10 +87,23 @@ public class Pet {
 
     @Override
     public String toString() {
-        return species + "{nickname='" + nickname + '\'' +
-                ", age=" + age +
-                ", trickLevel=" + trickLevel +
-                ", habits=" + Arrays.toString(habits) +
+        return species + " {nickname = '" + nickname + '\'' +
+                ", age = " + age +
+                ", trickLevel = " + trickLevel +
+                ", habits = " + Arrays.toString(habits) +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Pet pet = (Pet) o;
+        return trickLevel == pet.trickLevel && Objects.equals(species, pet.species) && Objects.equals(nickname, pet.nickname);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(species, nickname, trickLevel);
     }
 }
