@@ -6,13 +6,15 @@ public class FamilyMain {
         pet.eat();
         pet.respond();
         pet.foul();
-        Human mother = new Human("Kate", "Kolomiets", 1997);
-        Human father = new Human("Andrey", "Kononenko", 2001);
+        Human mother = new Human("Ginny Molly", "Weasley", 1981);
+        Human father = new Human("Harry James", "Potter", 1980);
         Family family = new Family(mother, father);
         System.out.println(family);
         mother.greetPet(pet);
         mother.describePet(pet);
-        family.addChild(new Human("Kira", "Kononenko", 2025));
+        family.addChild(new Human("Lily Luna", "Potter", 2007));
+        family.addChild(new Human("Albus Severus", "Potter", 2006));
+        family.addChild(new Human("James Sirius", "Potter", 2003));
         family.deleteChild(1);
     }
 }
