@@ -16,5 +16,6 @@ public class FamilyMain {
         family.addChild(new Human("Albus Severus", "Potter", 2006));
         family.addChild(new Human("James Sirius", "Potter", 2003));
         family.deleteChild(1);
+
     }
 }
