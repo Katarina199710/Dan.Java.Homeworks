@@ -15,7 +15,7 @@ public class FatherMain {
         try {
             father.goShopping(store, shoppingList);
         } catch (PurchaseException e) {
-            System.out.println(e.getMessage());;
+            System.out.println(e.getMessage());
         }
     }
 }
